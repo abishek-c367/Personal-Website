@@ -638,6 +638,7 @@ function openNewProject() {
 }
 
 function openEditProject(id) {
+  if(!requireAdmin()) return;
   const p = state.projects.find(x => x.id === id);
   if (!p) return;
   editingProjectId = id;
